@@ -75,4 +75,14 @@ describe('SongQueue', function() {
       SongModel.prototype.play.restore();
     });
   });
+
+  describe('dequeue', function() {
+    it('removes the song that is clicked from songQueue ', function() {
+      sinon.spy(SongModel.prototype, 'dequeue');
+      var songQueue = new SongQueue([songData1, songData2]);
+      songQueue.at(0).trigger('click');
+      songQueue.at(0).dequeue();
+      expect(songQueue.length).to.equal(1);
+    });
+  });
 });
