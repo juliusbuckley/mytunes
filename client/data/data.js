@@ -21,35 +21,47 @@
 //     artist: 'Aaliyah',
 //   }
 // ];
+// var arraySongs = [];
 
-var songApp = {};
+// var songApp = {};
 
-songApp.server = 'https://api.parse.com/1/classes/songs/';
+// songApp.server = 'https://api.parse.com/1/classes/songs/';
 
-songApp.init = function() {
-  this.fetch();
-};
-
-songApp.songArray;
+// songApp.init = function() {
+//   this.fetch();
+// };
 
 
-songApp.fetch = function() {
-  $.ajax({
-    // This is the url you should use to communicate with the parse API server.
-    url: this.server,
-    type: 'GET',
-    contentType: 'songApplication/json',
-    success: data => {
-      console.log('mytunes: Successfully connected to server');
-      var message = data.results;
-      songApp.songArray = message;
-      console.log('new', songApp.songArray);
-    },
-    error: data => {
-      // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
-      console.error('chatterbox: Failed to send message', data);
-    }
-  });
-};
-songApp.fetch();
-console.log(songApp.songArray);
+
+// songApp.fetch = function() {
+//   $.ajax({
+//     // This is the url you should use to communicate with the parse API server.
+//     url: this.server,
+//     type: 'GET',
+//     contentType: 'songApplication/json',
+//     success: data => {
+//       console.log('mytunes: Successfully connected to server');
+//       _.each(data.results, function(songs) {
+//         arraySongs.push(songs);
+//       });
+
+//       // console.log('new', songApp.songArray);
+//     },
+//     error: data => {
+//       // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
+//       console.error('chatterbox: Failed to send message', data);
+//     }
+//   });
+// };
+// songApp.fetch()
+// console.log(arraySongs);
+// var DataList = Backbone.Collection.extend({
+
+//   model: SongModel,
+//   url: 'https://api.parse.com/1/classes/songs/'
+
+// });
+ 
+
+// var data = new DataList();
+// console.log(data);
