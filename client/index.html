@@ -3,11 +3,11 @@
   <body>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
-    <form>
+    <div>
         <input type="text" id='title'>
             Title
-        <input type="submit" value="Search">
-    </form>
+        <button type="button" id="submit">Search</button>
+    </div>
    
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
@@ -31,7 +31,6 @@
       $(function() {
         // set up model objects
         var library = new Songs();
-        console.log('lib',library);
         var app = new AppModel({library: library});
         // build a view for the top level of the whole app
         var appView = new AppView({model: app});

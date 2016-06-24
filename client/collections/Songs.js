@@ -1,4 +1,6 @@
 // Songs.js - Defines a backbone collection class for songs.
+
+
 var Songs = Backbone.Collection.extend({
 
   model: SongModel,
@@ -11,6 +13,16 @@ var Songs = Backbone.Collection.extend({
 
   initialize: function() {
     this.fetch();
+      // 'where={"title": ""
+    
+    $('#submit').on('click', function() {
+      var songName = $('#title').val();
+      this.fetch(
+        {data: `where={"title":{"$regex":"${songName}","$options":"i"}}`}
+
+      );
+    }.bind(this));
+
   }
 
 });
